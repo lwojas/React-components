@@ -1,70 +1,229 @@
-# Getting Started with Create React App
+# React app - components assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Our App component is huge, and contains a lot or duplication, so not keeping with the DRY principle! Your task is to break it up into smaller, reusable components.
 
-## Available Scripts
+Here is the original code for the app component:
 
-In the project directory, you can run:
+```js
+// App.js
+import React from "react";
+import "./App.css";
 
-### `npm start`
+export default function App() {
+  return (
+    <div>
+      <header id="header" className="section-header scroll">
+        <a href="./">
+          <img
+            alt=""
+            className="icon"
+            src="https://learntocodetogether.nl/assets/icon.svg"
+          />
+        </a>
+        <a href="https://www.meetup.com/Learning-to-Code-Amsterdam/">
+          <img
+            alt=""
+            className="meetup-icon"
+            src="https://learntocodetogether.nl/assets/meetup-icon.svg"
+          />
+        </a>
+        <nav>
+          <a href="/courses.html">Our Courses</a>
+        </nav>
+      </header>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+      <div className="section-header-spacer"></div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+      <div className="content">
+        <div className="section section-what-usp">
+          <div className="component-section-header">
+            <div className="title-badge">
+              <div className="title-badge-title">Do you want to</div>
+            </div>
 
-### `npm test`
+            <h2>
+              <div className="component-title ">Learn how to code</div>
+            </h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+            <div className="description">
+              Awesome! Let’s do this together. We are here to support you in
+              your coding journey.
+            </div>
+          </div>
 
-### `npm run build`
+          <div className="component-usp-row">
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/team.svg"
+              />
+              <div className="component-title title">
+                Get help from experienced developers
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/community.svg"
+              />
+              <div className="component-title title">
+                Learn &amp; share with our community
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/personal-speed.svg"
+              />
+              <div className="component-title title">
+                Personal &amp; at your own speed
+              </div>
+            </div>
+          </div>
+        </div>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+        <div className="section-line">
+          <div className="line "></div>
+        </div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+        <div className="section section-courses-usp">
+          <div className="component-section-header">
+            <div className="title-badge">
+              <div className="title-badge-title">Courses</div>
+            </div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+            <h2>
+              <div className="component-title ">Our Courses</div>
+            </h2>
 
-### `npm run eject`
+            <div className="description">
+              We have created courses to help you learn, with easy to follow
+              steps and some sparks of fun!
+            </div>
+          </div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+          <div className="component-usp-row">
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/expand-horizon.svg"
+              />
+              <div className="component-title title">
+                Learn new skills and expand your horizon
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/developers.svg"
+              />
+              <div className="component-title title">
+                Follow courses created by experienced developers
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                style={{ width: "200px" }}
+                src="https://learntocodetogether.nl/assets/step-by-step.svg"
+              />
+              <div className="component-title title">
+                Fun, hands on and easy to follow
+              </div>
+            </div>
+          </div>
+        </div>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+        <div className="section-line">
+          <div className="line "></div>
+        </div>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+        <div className="section section-why-usp">
+          <div className="component-section-header">
+            <div className="title-badge">
+              <div className="title-badge-title">Why?</div>
+            </div>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+            <h2>
+              <div className="component-title ">Why do we do this</div>
+            </h2>
 
-## Learn More
+            <div className="description">
+              It’s really simple actually. We just love to combine our passion
+              for code with our love for teaching. Coding is so much fun when
+              doing it together.
+            </div>
+          </div>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+          <div className="component-usp-row">
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/technology.svg"
+              />
+              <div className="component-title title">Technology</div>
+              <div className="description">
+                We love to experiment and create awesome stuff from the comfort
+                of our couch.
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/community.svg"
+              />
+              <div className="component-title title">People</div>
+              <div className="description">
+                It’s always fun to do things together, the excitement and the
+                collaborations.
+              </div>
+            </div>
+            <div className="item team">
+              <img
+                alt=""
+                className="image"
+                src="https://learntocodetogether.nl/assets/personal-speed.svg"
+              />
+              <div className="component-title title">Teaching</div>
+              <div className="description">
+                We like to learn and to teach others the stuff we know.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+      <div className="section-line">
+        <div className="line "></div>
+      </div>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      <div className="section-footer">
+        <img
+          alt=""
+          className="logo"
+          src="https://learntocodetogether.nl/assets/logo.svg"
+        />
+        <div className="title">Created by</div>
+        <div className="subtitle">
+          Rein Op &#x27;t land &amp; Danny van der Jagt
+        </div>
+        <div className="team-container">
+          <img
+            alt=""
+            className="team"
+            src="https://learntocodetogether.nl/assets/danny&rein.svg"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+```
