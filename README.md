@@ -1,6 +1,8 @@
 # React app - components assignment
 
-Our App component is huge, and contains a lot or duplication, so not keeping with the DRY principle! Your task is to break it up into smaller, reusable components.
+"Our App component is huge, and contains a lot or duplication, so not keeping with the DRY principle! Your task is to break it up into smaller, reusable components."
+
+See /src/components for my proposed solution.
 
 Here is the original code for the app component:
 
